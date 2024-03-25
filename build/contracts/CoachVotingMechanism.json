@@ -1,0 +1,75 @@
+{
+  "contractName": "CoachVotingMechanism",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CoachVotingMechanism.sol\":\"CoachVotingMechanism\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CoachVotingMechanism.sol\":{\"keccak256\":\"0xfa482e79d72f30bbe4d9f5e71b2e5f8300b4fd4b77ca8dc87b2a8692570351c1\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://df7c3ebb1273232e960d01dd74837112b1b262d710495220349735c4f8645052\",\"dweb:/ipfs/QmSKMtyeFJqcwYAghh4eNsoX1nDQMy2Yb4GYqx3Zx6A7ri\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212207bf986202459a09f53b707e1eeb27dc413890b544752fbf78f1e3069e3ad5c4c64736f6c63430008130033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212207bf986202459a09f53b707e1eeb27dc413890b544752fbf78f1e3069e3ad5c4c64736f6c63430008130033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "267:121:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "267:121:0:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.19;\r\n\r\n// This contract is where proposals for head coach candidates are sent to and where votes are cast for a head coach\r\n// It also controls the distribution of MVCs and REP tokens when voting finishes\r\ncontract CoachVotingMechanism {\r\n    // some coaches already proposed\r\n    // some coaches free to make a proposal for\r\n}",
+  "sourcePath": "C:\\Users\\cooki\\OneDrive\\Documents\\Metro State Stuff\\690-Blockchain\\ics690-vikings-dapp\\contracts\\CoachVotingMechanism.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/CoachVotingMechanism.sol",
+    "exportedSymbols": {
+      "CoachVotingMechanism": [
+        2
+      ]
+    },
+    "id": 3,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".19"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:24:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "CoachVotingMechanism",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "CoachVotingMechanism",
+        "nameLocation": "276:20:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "267:121:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "40:348:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-03-25T00:35:07.059Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
