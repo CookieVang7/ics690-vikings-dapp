@@ -45,9 +45,9 @@
       "constant": true
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"clientUser\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"mvcs\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"repTokens\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"skolNationCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/SkolFaithful.sol\":\"SkolFaithful\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/SkolFaithful.sol\":{\"keccak256\":\"0x505be895441b508ada82c1f2eed7e304298469cde6674a22128efa43d0abac0d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5fc3c1b6516af5260cb7886a07bf3f4d83ec48b6a5ec2b85022cbe349dbfdeb9\",\"dweb:/ipfs/QmUEEWD4ArJfgs6wtcLryGaaAmxkWhLEpuZARJ7oWnwxfv\"]},\"project:/contracts/safemath.sol\":{\"keccak256\":\"0x5a537f7226559c4033385c54bb650505e6e9f196548c13f8842d3c928fd4edb5\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://d544c8c3e4b4f05ea200299a0006a194366fca36c301e43dd2afa80b5088688b\",\"dweb:/ipfs/QmPyfcPX8UFbtKHedpos69GR61Ku2ch1LRFpxMu7R9xZoD\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5061003473f220d553fbbc28b6f381cbb2be99d59de42d2f8461018360201b60201c565b61005773feb798ed0e1ec865bf80703ca1e1bb7a48ddeafa61018360201b60201c565b61007a7348f84a00f895be17bd4fa9e0731c7b39eacd6fbe61018360201b60201c565b61009d73cf16fe704d4b01ecdd98a41af04b92008d2a32cc61018360201b60201c565b6100c073709e646fc789ec4b3d093c8871f66640e9c6061661018360201b60201c565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060026000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001820154816001015560028201548160020155905050610338565b6101986001805461027060201b90919060201c565b60018190555060405180606001604052808273ffffffffffffffffffffffffffffffffffffffff1681526020016004815260200160008152506000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101556040820151816002015590505050565b600080828461027f91906102d5565b90508381101561029257610291610309565b5b8091505092915050565b6000819050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006102e08261029c565b91506102eb8361029c565b9250828201905080821115610303576103026102a6565b5b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052600160045260246000fd5b610199806103476000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806365b884e71461003b5780638ac0a5fe14610059575b600080fd5b610043610079565b60405161005091906100d0565b60405180910390f35b61006161007f565b6040516100709392919061012c565b60405180910390f35b60015481565b60028060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000819050919050565b6100ca816100b7565b82525050565b60006020820190506100e560008301846100c1565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610116826100eb565b9050919050565b6101268161010b565b82525050565b6000606082019050610141600083018661011d565b61014e60208301856100c1565b61015b60408301846100c1565b94935050505056fea2646970667358221220afc10382325cf62ac7460b5377bf75b114a993950c055e700a0024a8649d2bf764736f6c63430008130033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c806365b884e71461003b5780638ac0a5fe14610059575b600080fd5b610043610079565b60405161005091906100d0565b60405180910390f35b61006161007f565b6040516100709392919061012c565b60405180910390f35b60015481565b60028060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000819050919050565b6100ca816100b7565b82525050565b60006020820190506100e560008301846100c1565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610116826100eb565b9050919050565b6101268161010b565b82525050565b6000606082019050610141600083018661011d565b61014e60208301856100c1565b61015b60408301846100c1565b94935050505056fea2646970667358221220afc10382325cf62ac7460b5377bf75b114a993950c055e700a0024a8649d2bf764736f6c63430008130033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"clientUser\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"mvcs\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"repTokens\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"skolNationCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/SkolFaithful.sol\":\"SkolFaithful\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/SkolFaithful.sol\":{\"keccak256\":\"0x487fd47d51c3fb16c117b4c1a084eb13c2678d49d374cbfccf1c45ae4ece3c8a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4c0d36150e905b05708c6ac8712ef02d0149e690bfed38050ab6484580aab061\",\"dweb:/ipfs/QmNvWVRuEGh9Ho1X1Ujwo5ecJTo4BksEDYcHvw34df8zmK\"]},\"project:/contracts/safemath.sol\":{\"keccak256\":\"0x5a537f7226559c4033385c54bb650505e6e9f196548c13f8842d3c928fd4edb5\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://d544c8c3e4b4f05ea200299a0006a194366fca36c301e43dd2afa80b5088688b\",\"dweb:/ipfs/QmPyfcPX8UFbtKHedpos69GR61Ku2ch1LRFpxMu7R9xZoD\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061003473f220d553fbbc28b6f381cbb2be99d59de42d2f8461018360201b60201c565b61005773feb798ed0e1ec865bf80703ca1e1bb7a48ddeafa61018360201b60201c565b61007a7348f84a00f895be17bd4fa9e0731c7b39eacd6fbe61018360201b60201c565b61009d73cf16fe704d4b01ecdd98a41af04b92008d2a32cc61018360201b60201c565b6100c073709e646fc789ec4b3d093c8871f66640e9c6061661018360201b60201c565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060026000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001820154816001015560028201548160020155905050610338565b6101986001805461027060201b90919060201c565b60018190555060405180606001604052808273ffffffffffffffffffffffffffffffffffffffff1681526020016004815260200160008152506000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101556040820151816002015590505050565b600080828461027f91906102d5565b90508381101561029257610291610309565b5b8091505092915050565b6000819050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006102e08261029c565b91506102eb8361029c565b9250828201905080821115610303576103026102a6565b5b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052600160045260246000fd5b610199806103476000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806365b884e71461003b5780638ac0a5fe14610059575b600080fd5b610043610079565b60405161005091906100d0565b60405180910390f35b61006161007f565b6040516100709392919061012c565b60405180910390f35b60015481565b60028060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000819050919050565b6100ca816100b7565b82525050565b60006020820190506100e560008301846100c1565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610116826100eb565b9050919050565b6101268161010b565b82525050565b6000606082019050610141600083018661011d565b61014e60208301856100c1565b61015b60408301846100c1565b94935050505056fea264697066735822122014407de382c70dc4bfcde71729ea393052fcabec5073c1be9e1d60e17c196d6f64736f6c63430008130033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c806365b884e71461003b5780638ac0a5fe14610059575b600080fd5b610043610079565b60405161005091906100d0565b60405180910390f35b61006161007f565b6040516100709392919061012c565b60405180910390f35b60015481565b60028060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000819050919050565b6100ca816100b7565b82525050565b60006020820190506100e560008301846100c1565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610116826100eb565b9050919050565b6101268161010b565b82525050565b6000606082019050610141600083018661011d565b61014e60208301856100c1565b61015b60408301846100c1565b94935050505056fea264697066735822122014407de382c70dc4bfcde71729ea393052fcabec5073c1be9e1d60e17c196d6f64736f6c63430008130033",
   "immutableReferences": {},
   "generatedSources": [
     {
@@ -1078,9 +1078,9 @@
       "name": "#utility.yul"
     }
   ],
-  "sourceMap": "332:835:2:-:0;;;613:391;;;;;;;;;;639:53;649:42;639:9;;;:53;;:::i;:::-;703;713:42;703:9;;;:53;;:::i;:::-;767;777:42;767:9;;;:53;;:::i;:::-;831;841:42;831:9;;;:53;;:::i;:::-;895;905:42;895:9;;;:53;;:::i;:::-;974:10;:22;985:10;974:22;;;;;;;;;;;;;;;961:10;:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;332:835;;1012:152;1084:22;1104:1;1084:15;;:19;;;;:22;;;;:::i;:::-;1066:15;:40;;;;1138:18;;;;;;;;1145:6;1138:18;;;;;;1152:1;1138:18;;;;1154:1;1138:18;;;1117:10;:18;1128:6;1117:18;;;;;;;;;;;;;;;:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1012:152;:::o;1087:133:3:-;1145:7;1161:9;1177:1;1173;:5;;;;:::i;:::-;1161:17;;1197:1;1192;:6;;1185:14;;;;:::i;:::-;;1213:1;1206:8;;;1087:133;;;;:::o;7:77:4:-;44:7;73:5;62:16;;7:77;;;:::o;90:180::-;138:77;135:1;128:88;235:4;232:1;225:15;259:4;256:1;249:15;276:191;316:3;335:20;353:1;335:20;:::i;:::-;330:25;;369:20;387:1;369:20;:::i;:::-;364:25;;412:1;409;405:9;398:16;;433:3;430:1;427:10;424:36;;;440:18;;:::i;:::-;424:36;276:191;;;;:::o;473:180::-;521:77;518:1;511:88;618:4;615:1;608:15;642:4;639:1;632:15;332:835:2;;;;;;;",
-  "deployedSourceMap": "332:835:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;544:27;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;580:24;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;544:27;;;;:::o;580:24::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;7:77:4:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;442:126::-;479:7;519:42;512:5;508:54;497:65;;442:126;;;:::o;574:96::-;611:7;640:24;658:5;640:24;:::i;:::-;629:35;;574:96;;;:::o;676:118::-;763:24;781:5;763:24;:::i;:::-;758:3;751:37;676:118;;:::o;800:442::-;949:4;987:2;976:9;972:18;964:26;;1000:71;1068:1;1057:9;1053:17;1044:6;1000:71;:::i;:::-;1081:72;1149:2;1138:9;1134:18;1125:6;1081:72;:::i;:::-;1163;1231:2;1220:9;1216:18;1207:6;1163:72;:::i;:::-;800:442;;;;;;:::o",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\nimport \"./safemath.sol\";\r\n\r\n// to interact with a deployed instance of this contract after running command \"truffle console\":\r\n// SkolFaithful.deployed().then(function(instance) {app = instance})\r\n\r\n// address of contract: '0x55177A98E75ef8bd8A4B0a4dd432C85a4A3659a8'\r\n\r\ncontract SkolFaithful {\r\n    using SafeMath for uint;\r\n\r\n    struct Member {\r\n        address owner;\r\n        uint mvcs;\r\n        uint repTokens;\r\n    }\r\n\r\n    mapping(address => Member) private skolNation;\r\n    uint public skolNationCount;\r\n\r\n    Member public clientUser;\r\n\r\n    constructor () {\r\n        addMember(0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84);\r\n        addMember(0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa);\r\n        addMember(0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe);\r\n        addMember(0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC);\r\n        addMember(0x709E646fc789ec4b3D093C8871f66640E9c60616);\r\n\r\n        clientUser = skolNation[msg.sender];\r\n    }\r\n\r\n    function addMember(address _owner) private {\r\n        skolNationCount = skolNationCount.add(1);\r\n        skolNation[_owner] = Member(_owner,4,0);\r\n    }\r\n}",
+  "sourceMap": "332:1067:2:-:0;;;746:391;;;;;;;;;;772:53;782:42;772:9;;;:53;;:::i;:::-;836;846:42;836:9;;;:53;;:::i;:::-;900;910:42;900:9;;;:53;;:::i;:::-;964;974:42;964:9;;;:53;;:::i;:::-;1028;1038:42;1028:9;;;:53;;:::i;:::-;1107:10;:22;1118:10;1107:22;;;;;;;;;;;;;;;1094:10;:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;332:1067;;1244:152;1316:22;1336:1;1316:15;;:19;;;;:22;;;;:::i;:::-;1298:15;:40;;;;1370:18;;;;;;;;1377:6;1370:18;;;;;;1384:1;1370:18;;;;1386:1;1370:18;;;1349:10;:18;1360:6;1349:18;;;;;;;;;;;;;;;:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1244:152;:::o;1087:133:3:-;1145:7;1161:9;1177:1;1173;:5;;;;:::i;:::-;1161:17;;1197:1;1192;:6;;1185:14;;;;:::i;:::-;;1213:1;1206:8;;;1087:133;;;;:::o;7:77:4:-;44:7;73:5;62:16;;7:77;;;:::o;90:180::-;138:77;135:1;128:88;235:4;232:1;225:15;259:4;256:1;249:15;276:191;316:3;335:20;353:1;335:20;:::i;:::-;330:25;;369:20;387:1;369:20;:::i;:::-;364:25;;412:1;409;405:9;398:16;;433:3;430:1;427:10;424:36;;;440:18;;:::i;:::-;424:36;276:191;;;;:::o;473:180::-;521:77;518:1;511:88;618:4;615:1;608:15;642:4;639:1;632:15;332:1067:2;;;;;;;",
+  "deployedSourceMap": "332:1067:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;679:27;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;713:24;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;679:27;;;;:::o;713:24::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;7:77:4:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;442:126::-;479:7;519:42;512:5;508:54;497:65;;442:126;;;:::o;574:96::-;611:7;640:24;658:5;640:24;:::i;:::-;629:35;;574:96;;;:::o;676:118::-;763:24;781:5;763:24;:::i;:::-;758:3;751:37;676:118;;:::o;800:442::-;949:4;987:2;976:9;972:18;964:26;;1000:71;1068:1;1057:9;1053:17;1044:6;1000:71;:::i;:::-;1081:72;1149:2;1138:9;1134:18;1125:6;1081:72;:::i;:::-;1163;1231:2;1220:9;1216:18;1207:6;1163:72;:::i;:::-;800:442;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\nimport \"./safemath.sol\";\r\n\r\n// to interact with a deployed instance of this contract after running command \"truffle console\":\r\n// SkolFaithful.deployed().then(function(instance) {app = instance})\r\n\r\n// address of contract: '0x55177A98E75ef8bd8A4B0a4dd432C85a4A3659a8'\r\n\r\ncontract SkolFaithful {\r\n    using SafeMath for uint;\r\n\r\n    struct Member {\r\n        address owner;\r\n        uint mvcs;\r\n        uint repTokens;\r\n    }\r\n\r\n    // Members of the DAO, currently hidden to users\r\n    mapping(address => Member) private skolNation;\r\n\r\n    // can reference with: app.clientUser(), app.skolNationCount().toNumber()\r\n    uint public skolNationCount;\r\n    Member public clientUser;\r\n\r\n    constructor () {\r\n        addMember(0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84);\r\n        addMember(0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa);\r\n        addMember(0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe);\r\n        addMember(0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC);\r\n        addMember(0x709E646fc789ec4b3D093C8871f66640E9c60616);\r\n\r\n        clientUser = skolNation[msg.sender];\r\n    }\r\n\r\n    // Adding members to the skolNation map giving them initial values of 4 MVCs and 0 REP tokens\r\n    function addMember(address _owner) private {\r\n        skolNationCount = skolNationCount.add(1);\r\n        skolNation[_owner] = Member(_owner,4,0);\r\n    }\r\n}",
   "sourcePath": "C:\\Users\\cooki\\OneDrive\\Documents\\Metro State Stuff\\690-Blockchain\\ics690-vikings-dapp\\contracts\\SkolFaithful.sol",
   "ast": {
     "absolutePath": "project:/contracts/SkolFaithful.sol",
@@ -1259,10 +1259,10 @@
             "id": 53,
             "mutability": "mutable",
             "name": "skolNation",
-            "nameLocation": "527:10:2",
+            "nameLocation": "581:10:2",
             "nodeType": "VariableDeclaration",
             "scope": 113,
-            "src": "492:45:2",
+            "src": "546:45:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1277,14 +1277,14 @@
                 "id": 49,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "500:7:2",
+                "src": "554:7:2",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "492:26:2",
+              "src": "546:26:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$48_storage_$",
                 "typeString": "mapping(address => struct SkolFaithful.Member)"
@@ -1298,14 +1298,14 @@
                   "id": 50,
                   "name": "Member",
                   "nameLocations": [
-                    "511:6:2"
+                    "565:6:2"
                   ],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 48,
-                  "src": "511:6:2"
+                  "src": "565:6:2"
                 },
                 "referencedDeclaration": 48,
-                "src": "511:6:2",
+                "src": "565:6:2",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Member_$48_storage_ptr",
                   "typeString": "struct SkolFaithful.Member"
@@ -1320,10 +1320,10 @@
             "id": 55,
             "mutability": "mutable",
             "name": "skolNationCount",
-            "nameLocation": "556:15:2",
+            "nameLocation": "691:15:2",
             "nodeType": "VariableDeclaration",
             "scope": 113,
-            "src": "544:27:2",
+            "src": "679:27:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1334,7 +1334,7 @@
               "id": 54,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "544:4:2",
+              "src": "679:4:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1348,10 +1348,10 @@
             "id": 58,
             "mutability": "mutable",
             "name": "clientUser",
-            "nameLocation": "594:10:2",
+            "nameLocation": "727:10:2",
             "nodeType": "VariableDeclaration",
             "scope": 113,
-            "src": "580:24:2",
+            "src": "713:24:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1365,14 +1365,14 @@
                 "id": 56,
                 "name": "Member",
                 "nameLocations": [
-                  "580:6:2"
+                  "713:6:2"
                 ],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 48,
-                "src": "580:6:2"
+                "src": "713:6:2"
               },
               "referencedDeclaration": 48,
-              "src": "580:6:2",
+              "src": "713:6:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_struct$_Member_$48_storage_ptr",
                 "typeString": "struct SkolFaithful.Member"
@@ -1384,7 +1384,7 @@
             "body": {
               "id": 88,
               "nodeType": "Block",
-              "src": "628:376:2",
+              "src": "761:376:2",
               "statements": [
                 {
                   "expression": {
@@ -1398,7 +1398,7 @@
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "649:42:2",
+                        "src": "782:42:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1418,7 +1418,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 112,
-                      "src": "639:9:2",
+                      "src": "772:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -1433,7 +1433,7 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "639:53:2",
+                    "src": "772:53:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1442,7 +1442,7 @@
                   },
                   "id": 64,
                   "nodeType": "ExpressionStatement",
-                  "src": "639:53:2"
+                  "src": "772:53:2"
                 },
                 {
                   "expression": {
@@ -1456,7 +1456,7 @@
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "713:42:2",
+                        "src": "846:42:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1476,7 +1476,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 112,
-                      "src": "703:9:2",
+                      "src": "836:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -1491,7 +1491,7 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "703:53:2",
+                    "src": "836:53:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1500,7 +1500,7 @@
                   },
                   "id": 68,
                   "nodeType": "ExpressionStatement",
-                  "src": "703:53:2"
+                  "src": "836:53:2"
                 },
                 {
                   "expression": {
@@ -1514,7 +1514,7 @@
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "777:42:2",
+                        "src": "910:42:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1534,7 +1534,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 112,
-                      "src": "767:9:2",
+                      "src": "900:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -1549,7 +1549,7 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "767:53:2",
+                    "src": "900:53:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1558,7 +1558,7 @@
                   },
                   "id": 72,
                   "nodeType": "ExpressionStatement",
-                  "src": "767:53:2"
+                  "src": "900:53:2"
                 },
                 {
                   "expression": {
@@ -1572,7 +1572,7 @@
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "841:42:2",
+                        "src": "974:42:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1592,7 +1592,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 112,
-                      "src": "831:9:2",
+                      "src": "964:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -1607,7 +1607,7 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "831:53:2",
+                    "src": "964:53:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1616,7 +1616,7 @@
                   },
                   "id": 76,
                   "nodeType": "ExpressionStatement",
-                  "src": "831:53:2"
+                  "src": "964:53:2"
                 },
                 {
                   "expression": {
@@ -1630,7 +1630,7 @@
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "905:42:2",
+                        "src": "1038:42:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1650,7 +1650,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 112,
-                      "src": "895:9:2",
+                      "src": "1028:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -1665,7 +1665,7 @@
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "895:53:2",
+                    "src": "1028:53:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1674,7 +1674,7 @@
                   },
                   "id": 80,
                   "nodeType": "ExpressionStatement",
-                  "src": "895:53:2"
+                  "src": "1028:53:2"
                 },
                 {
                   "expression": {
@@ -1689,7 +1689,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 58,
-                      "src": "961:10:2",
+                      "src": "1094:10:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Member_$48_storage",
                         "typeString": "struct SkolFaithful.Member storage ref"
@@ -1704,7 +1704,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 53,
-                        "src": "974:10:2",
+                        "src": "1107:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$48_storage_$",
                           "typeString": "mapping(address => struct SkolFaithful.Member storage ref)"
@@ -1718,7 +1718,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967281,
-                          "src": "985:3:2",
+                          "src": "1118:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -1729,10 +1729,10 @@
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "989:6:2",
+                        "memberLocation": "1122:6:2",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "985:10:2",
+                        "src": "1118:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1743,13 +1743,13 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "974:22:2",
+                      "src": "1107:22:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Member_$48_storage",
                         "typeString": "struct SkolFaithful.Member storage ref"
                       }
                     },
-                    "src": "961:35:2",
+                    "src": "1094:35:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Member_$48_storage",
                       "typeString": "struct SkolFaithful.Member storage ref"
@@ -1757,7 +1757,7 @@
                   },
                   "id": 87,
                   "nodeType": "ExpressionStatement",
-                  "src": "961:35:2"
+                  "src": "1094:35:2"
                 }
               ]
             },
@@ -1772,16 +1772,16 @@
               "id": 59,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "625:2:2"
+              "src": "758:2:2"
             },
             "returnParameters": {
               "id": 60,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "628:0:2"
+              "src": "761:0:2"
             },
             "scope": 113,
-            "src": "613:391:2",
+            "src": "746:391:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
@@ -1790,7 +1790,7 @@
             "body": {
               "id": 111,
               "nodeType": "Block",
-              "src": "1055:109:2",
+              "src": "1287:109:2",
               "statements": [
                 {
                   "expression": {
@@ -1805,7 +1805,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 55,
-                      "src": "1066:15:2",
+                      "src": "1298:15:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1824,7 +1824,7 @@
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1104:1:2",
+                          "src": "1336:1:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_1_by_1",
                             "typeString": "int_const 1"
@@ -1845,7 +1845,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 55,
-                          "src": "1084:15:2",
+                          "src": "1316:15:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1856,11 +1856,11 @@
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "1100:3:2",
+                        "memberLocation": "1332:3:2",
                         "memberName": "add",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 215,
-                        "src": "1084:19:2",
+                        "src": "1316:19:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
@@ -1875,14 +1875,14 @@
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "1084:22:2",
+                      "src": "1316:22:2",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "1066:40:2",
+                    "src": "1298:40:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1890,7 +1890,7 @@
                   },
                   "id": 100,
                   "nodeType": "ExpressionStatement",
-                  "src": "1066:40:2"
+                  "src": "1298:40:2"
                 },
                 {
                   "expression": {
@@ -1906,7 +1906,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 53,
-                        "src": "1117:10:2",
+                        "src": "1349:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$48_storage_$",
                           "typeString": "mapping(address => struct SkolFaithful.Member storage ref)"
@@ -1919,7 +1919,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 91,
-                        "src": "1128:6:2",
+                        "src": "1360:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1930,7 +1930,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1117:18:2",
+                      "src": "1349:18:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Member_$48_storage",
                         "typeString": "struct SkolFaithful.Member storage ref"
@@ -1946,7 +1946,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 91,
-                          "src": "1145:6:2",
+                          "src": "1377:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1961,7 +1961,7 @@
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1152:1:2",
+                          "src": "1384:1:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_4_by_1",
                             "typeString": "int_const 4"
@@ -1977,7 +1977,7 @@
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1154:1:2",
+                          "src": "1386:1:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
@@ -2005,7 +2005,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 48,
-                        "src": "1138:6:2",
+                        "src": "1370:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Member_$48_storage_ptr_$",
                           "typeString": "type(struct SkolFaithful.Member storage pointer)"
@@ -2020,14 +2020,14 @@
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "1138:18:2",
+                      "src": "1370:18:2",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Member_$48_memory_ptr",
                         "typeString": "struct SkolFaithful.Member memory"
                       }
                     },
-                    "src": "1117:39:2",
+                    "src": "1349:39:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Member_$48_storage",
                       "typeString": "struct SkolFaithful.Member storage ref"
@@ -2035,7 +2035,7 @@
                   },
                   "id": 110,
                   "nodeType": "ExpressionStatement",
-                  "src": "1117:39:2"
+                  "src": "1349:39:2"
                 }
               ]
             },
@@ -2044,7 +2044,7 @@
             "kind": "function",
             "modifiers": [],
             "name": "addMember",
-            "nameLocation": "1021:9:2",
+            "nameLocation": "1253:9:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 92,
@@ -2055,10 +2055,10 @@
                   "id": 91,
                   "mutability": "mutable",
                   "name": "_owner",
-                  "nameLocation": "1039:6:2",
+                  "nameLocation": "1271:6:2",
                   "nodeType": "VariableDeclaration",
                   "scope": 112,
-                  "src": "1031:14:2",
+                  "src": "1263:14:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2069,7 +2069,7 @@
                     "id": 90,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1031:7:2",
+                    "src": "1263:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2079,27 +2079,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1030:16:2"
+              "src": "1262:16:2"
             },
             "returnParameters": {
               "id": 93,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1055:0:2"
+              "src": "1287:0:2"
             },
             "scope": 113,
-            "src": "1012:152:2",
+            "src": "1244:152:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "private"
           }
         ],
         "scope": 114,
-        "src": "332:835:2",
+        "src": "332:1067:2",
         "usedErrors": []
       }
     ],
-    "src": "33:1134:2"
+    "src": "33:1366:2"
   },
   "compiler": {
     "name": "solc",
@@ -2109,8 +2109,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xAc5Ad37Ec2BF5713292F178D6F5172e759559A0E",
-      "transactionHash": "0x45c8942a39b68d1f06675f62aded3663655bccb20bfcfdd39d628aa223900d70"
+      "address": "0x20200A4803Afb50F43C22C1a328BCe534389019E",
+      "transactionHash": "0x04820b322e01b25e6914b8070d4906d3b6807e3ad90828e88ee60dde79517960"
     },
     "1711245144128": {
       "events": {},
@@ -2126,7 +2126,7 @@
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-03-25T00:35:09.836Z",
+  "updatedAt": "2024-03-25T03:50:39.069Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
