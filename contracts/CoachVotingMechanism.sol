@@ -2,6 +2,7 @@
 pragma solidity ^0.8.19;
 
 import "./safemath.sol";
+//import "./SkolFaithful.sol";
 
 // This contract is where proposals for head coach candidates are sent to and where votes are cast for a head coach
 // It also controls the distribution of MVCs and REP tokens when voting finishes
@@ -31,6 +32,8 @@ contract CoachVotingMechanism {
 
     event ProposalReceived(address sender, string candidateName, uint amount);
 
+    address public contractAddress;
+
     constructor () {
         address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
         address temp3 = 0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe;
@@ -40,9 +43,13 @@ contract CoachVotingMechanism {
         addCandidate("Mike Vrabel", temp3);
         addCandidate("Brandon Staley", temp4);
         addCandidate("Frank Reich", temp5);
+
+        contractAddress = address(this);
     }
 
-    // adds a candidate to the list of candidates
+    // adds a candidate to the map of candidates
+    // checks for candidates with the duplicateCandidateCheck helper function
+    // adds owner of candidate proposal to hasProposed map which is checked so an owner can't make more than 1 proposal 
     function addCandidate(string memory candidateName, address owner) private {
         require(!duplicateCandidateCheck(candidateName), 'Candidate already in contention for voting');
 
@@ -52,6 +59,7 @@ contract CoachVotingMechanism {
         candidates[candidateCount] = Candidate(candidateCount,candidateName,1,owner,votersForCandidate);
     }
 
+    // helper function to check if incoming candidate is already proposed by someone else
     function duplicateCandidateCheck(string memory candidateName) private view returns (bool) {
         bool output = false;
         for (uint i=1; i<=candidateCount; i++){
@@ -64,6 +72,11 @@ contract CoachVotingMechanism {
         return output;
     }
 
+    // user uses this function to vote for a coach candidate
+    // makes sure user hasn't voted already and provides sufficient eth (costs 2mvcs/eth to vote)
+    // increments votes for candidate and adds voter's address to array field in Candidate struct for potential redistribution
+    // emits votedEvent event
+    // OVERSIGHT - overlooked the separation of my DAO'S currency MVCs vs eth
     function voteForCandidate(uint candidateId, address voterAddress) public payable {
         require(!haveVoted[msg.sender], 'User account has already voted');
         uint ethAmount = 2;
@@ -77,6 +90,9 @@ contract CoachVotingMechanism {
         emit votedEvent(candidateId);
     }
 
+    // user uses this function to submit a proposal for a new coach candidate
+    // checks that sufficient eth is provided (4eth) and that user hasn't already made a proposal
+    // adds ether to totalEther value which will be distributed after the voting has ended
     function receiveCandidateProposal(string memory candidateName, address owner) public payable {
         require(!hasProposed[msg.sender], 'User account has already made a proposal');
         uint ethAmount = 4;
@@ -87,4 +103,85 @@ contract CoachVotingMechanism {
 
         addCandidate(candidateName, owner);        
     }
+
+    // ChatGPT generated function that takes the map of candidates and returns an array of candidates coming top 5 in voting
+    // index 0 candidate has most votes, index 4 candidate has least votes out of the top 5
+    function getPodium() private view returns (Candidate[5] memory) {
+        Candidate[5] memory podium;
+        
+        // Initialize an array to store the top 5 candidates
+        for (uint i = 0; i < 5; i++) {
+            uint maxVotes = 0;
+            uint maxIndex = 0;
+            
+            // Find the candidate with the maximum votes
+            for (uint j = 1; j <= candidateCount; j++) {
+                if (candidates[j].voteCount > maxVotes) {
+                    bool isAlreadyInTop = false;
+                    for(uint k = 0; k < i; k++) {
+                        if(candidates[j].id == podium[k].id) {
+                            isAlreadyInTop = true;
+                            break;
+                        }
+                    }
+                    if(!isAlreadyInTop) {
+                        maxVotes = candidates[j].voteCount;
+                        maxIndex = j;
+                    }
+                }
+            }
+            
+            // Add the candidate with the maximum votes to the podium array
+            podium[i] = candidates[maxIndex];
+        }
+        
+        return podium;
+    }
+
+
+    bool public doneVoting = false;
+    function distributeMVCsAfterVoting() private {
+        if (doneVoting) {
+            Candidate[] topFive = getPodium();
+
+            for (uint i=0; i<topFive.length; i++){ // rule 1
+                for (uint j=0; j<topFive[i].votersForCandidate.length; j++){
+                    address payable recipient = payable(topFive[i].votersForCandidate[j]);
+                    sendMVC(recipient, contractAddress, 1 ether);
+                }
+                totalMVCs = totalMVCs.sub(topFive[i].votersForCandidate.length);
+            }
+
+            uint conversion = 10;
+            uint initialPercent = 30;
+
+            for (uint k=0; k<topFive.length; k++){ // rules 2-6
+                uint percentage = initialPercent - k * 5;
+                uint amount = (totalMVCs*percentage/100)*conversion/100;
+
+                address payable recipient2 = payable(topFive[k].proposal.ownerAddress);
+                sendMVC(recipient2, VotingMechanismAddress, amount);
+            }
+        }
+    }
+
+    function sendMVC(address payable _to, address _from, uint amount) private payable {
+        require(msg.sender == _from, "Only the specified sender can call this function");
+        require(address(this).balance >= amount, "Insufficient balance in the contract");
+
+        _to.transfer(amount);
+    }
+
+    // function awardRepTokens(address _memberAddress, uint _tokens) external {
+    //     uint totalMembers = skolFaithful.getMembers().length;
+
+    //     for (uint i=0; i<totalMembers; i++){
+    //         SkolFaithful.Member memory member = skolFaithful.getMemberAtIndex(i);
+
+    //         if (member.owner == _memberAddress){
+    //             skolFaithful.updateRepTokens(i, _tokens);
+    //             return;
+    //         }
+    //     }
+    // }
 }
