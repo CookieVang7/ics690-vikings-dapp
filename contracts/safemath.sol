@@ -45,4 +45,8 @@ library SafeMath {
     assert(c >= a);
     return c;
   }
+
+  function toWei(uint256 ethAmount) internal pure returns (uint256) {
+    return mul(ethAmount, 1 ether);
+  }
 }

@@ -40,8 +40,10 @@ contract CoachVotingMechanism {
         candidates[candidateCount] = Candidate(candidateCount,_candidateName,0,owner,votersForCandidate);
     }
 
-    function voteForCandidate(uint _candidateId, address voterAddress) public {
+    function voteForCandidate(uint _candidateId, address voterAddress) public payable {
         require(!haveVoted[msg.sender]);
+        uint ethAmount = 2;
+        require(msg.value == ethAmount.toWei());
         require(_candidateId > 0 && _candidateId <= candidateCount);
 
         haveVoted[msg.sender] = true;
