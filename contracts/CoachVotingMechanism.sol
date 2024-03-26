@@ -20,36 +20,71 @@ contract CoachVotingMechanism {
     }
 
     mapping(uint => Candidate) public candidates;
-    mapping(address => bool) public haveVoted;
+    mapping(address => bool) private haveVoted;
+    mapping(address => bool) private hasProposed;
     uint public candidateCount;
+    uint private totalEther;
 
     event votedEvent (
         uint indexed _candidateId
     );
 
+    event ProposalReceived(address sender, string candidateName, uint amount);
+
     constructor () {
-        address temp1 = 0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84;
         address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
-        addCandidate("Bill Belichick", temp1);
-        addCandidate("Mike Vrabel", temp2);
+        address temp3 = 0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe;
+        address temp4 = 0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC;
+        address temp5 = 0x709E646fc789ec4b3D093C8871f66640E9c60616;
+        addCandidate("Bill Belichick", temp2);
+        addCandidate("Mike Vrabel", temp3);
+        addCandidate("Brandon Staley", temp4);
+        addCandidate("Frank Reich", temp5);
     }
 
-    function addCandidate(string memory _candidateName, address owner) private {
+    // adds a candidate to the list of candidates
+    function addCandidate(string memory candidateName, address owner) private {
+        require(!duplicateCandidateCheck(candidateName), 'Candidate already in contention for voting');
+
         candidateCount = candidateCount.add(1);
+        hasProposed[owner] = true;
         address[] memory votersForCandidate;
-        candidates[candidateCount] = Candidate(candidateCount,_candidateName,0,owner,votersForCandidate);
+        candidates[candidateCount] = Candidate(candidateCount,candidateName,1,owner,votersForCandidate);
     }
 
-    function voteForCandidate(uint _candidateId, address voterAddress) public payable {
-        require(!haveVoted[msg.sender]);
+    function duplicateCandidateCheck(string memory candidateName) private view returns (bool) {
+        bool output = false;
+        for (uint i=1; i<=candidateCount; i++){
+            Candidate memory temp = candidates[i];
+            if (keccak256(abi.encodePacked(temp.name)) == keccak256(abi.encodePacked(candidateName))){
+                output = true;
+                break;
+            }
+        }
+        return output;
+    }
+
+    function voteForCandidate(uint candidateId, address voterAddress) public payable {
+        require(!haveVoted[msg.sender], 'User account has already voted');
         uint ethAmount = 2;
-        require(msg.value == ethAmount.toWei());
-        require(_candidateId > 0 && _candidateId <= candidateCount);
+        require(msg.value == ethAmount.toWei(), 'Insufficient funds provided');
+        require(candidateId > 0 && candidateId <= candidateCount);
 
         haveVoted[msg.sender] = true;
-        candidates[_candidateId].voteCount = candidates[_candidateId].voteCount.add(1);
-        candidates[_candidateId].votersForCandidate.push(voterAddress);
+        candidates[candidateId].voteCount = candidates[candidateId].voteCount.add(1);
+        candidates[candidateId].votersForCandidate.push(voterAddress);
         
-        emit votedEvent(_candidateId);
+        emit votedEvent(candidateId);
+    }
+
+    function receiveCandidateProposal(string memory candidateName, address owner) public payable {
+        require(!hasProposed[msg.sender], 'User account has already made a proposal');
+        uint ethAmount = 4;
+        require(msg.value == ethAmount.toWei(), 'Insufficient funds provided');
+
+        totalEther = totalEther.add(msg.value);
+        emit ProposalReceived(msg.sender, candidateName, msg.value);
+
+        addCandidate(candidateName, owner);        
     }
 }
