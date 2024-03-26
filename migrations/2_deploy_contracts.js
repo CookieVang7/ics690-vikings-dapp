@@ -1,7 +1,9 @@
 // an artifact that we can interact with
-var SkolFaithful = artifacts.require("./SkolFaithful.sol");
+var Election = artifacts.require("./Election.sol");
+var CoachVotingMechanism = artifacts.require("./CoachVotingMechanism.sol");
 
 // a directive to deploy the contract
 module.exports = function(deployer) {
-  deployer.deploy(SkolFaithful);
+  deployer.deploy(Election);
+  deployer.deploy(CoachVotingMechanism);
 };

@@ -25,13 +25,11 @@ contract SkolFaithful {
     Member public clientUser;
 
     constructor () {
-        addMember(0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84);
-        addMember(0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa);
+        addMember(0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84); // Bill Belichick
+        addMember(0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa); // Mike Vrabel
         addMember(0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe);
         addMember(0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC);
         addMember(0x709E646fc789ec4b3D093C8871f66640E9c60616);
-
-        clientUser = skolNation[msg.sender];
     }
 
     // Adding members to the skolNation map giving them initial values of 4 MVCs and 0 REP tokens
