@@ -140,16 +140,16 @@ contract CoachVotingMechanism {
 
 
     bool public doneVoting = false;
-    function distributeMVCsAfterVoting() private {
+    function distributeMVCsAfterVoting(Candidate[] memory topFive) private {
         if (doneVoting) {
-            Candidate[] topFive = getPodium();
+            //Candidate[] topFive = getPodium();
 
             for (uint i=0; i<topFive.length; i++){ // rule 1
                 for (uint j=0; j<topFive[i].votersForCandidate.length; j++){
                     address payable recipient = payable(topFive[i].votersForCandidate[j]);
                     sendMVC(recipient, contractAddress, 1 ether);
                 }
-                totalMVCs = totalMVCs.sub(topFive[i].votersForCandidate.length);
+                totalEther = totalEther.sub(topFive[i].votersForCandidate.length);
             }
 
             uint conversion = 10;
@@ -157,15 +157,15 @@ contract CoachVotingMechanism {
 
             for (uint k=0; k<topFive.length; k++){ // rules 2-6
                 uint percentage = initialPercent - k * 5;
-                uint amount = (totalMVCs*percentage/100)*conversion/100;
+                uint amount = (totalEther*percentage/100)*conversion/100;
 
-                address payable recipient2 = payable(topFive[k].proposal.ownerAddress);
-                sendMVC(recipient2, VotingMechanismAddress, amount);
+                address payable recipient2 = payable(topFive[k].ownerAddress);
+                sendMVC(recipient2, contractAddress, amount);
             }
         }
     }
 
-    function sendMVC(address payable _to, address _from, uint amount) private payable {
+    function sendMVC(address payable _to, address _from, uint amount) public payable {
         require(msg.sender == _from, "Only the specified sender can call this function");
         require(address(this).balance >= amount, "Insufficient balance in the contract");
 

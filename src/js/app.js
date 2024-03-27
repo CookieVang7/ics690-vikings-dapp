@@ -5,21 +5,26 @@ App = {
   hasVoted: false,
 
   init: function() {
-    return App.initWeb3();
-  },
-
-  initWeb3: function() {
-    // TODO: refactor conditional
-    if (typeof web3 !== 'undefined') {
-      // If a web3 instance is already provided by Meta Mask.
-      App.web3Provider = web3.currentProvider;
-      web3 = new Web3(web3.currentProvider);
+    // Initialize Web3
+    if (window.ethereum) {
+      App.web3Provider = window.ethereum;
+      window.web3 = new Web3(window.ethereum);
+      // Request account access using eth_requestAccounts
+      window.ethereum.request({ method: 'eth_requestAccounts' }).then(function(accounts) {
+        App.account = accounts[0];
+        // Call initContract after getting the account
+        return App.initContract();
+      }).catch(function(error) {
+        // Handle error
+        console.error("Error accessing account:", error);
+      });
     } else {
-      // Specify default instance if no web3 instance provided
+      // Fallback to localhost if no web3 instance is detected
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
-      web3 = new Web3(App.web3Provider);
+      window.web3 = new Web3(App.web3Provider);
+      // Call initContract directly if no account access is needed
+      App.initContract();
     }
-    return App.initContract();
   },
 
   initContract: function() {
@@ -29,36 +34,28 @@ App = {
       // Connect provider to interact with contract
       App.contracts.Election.setProvider(App.web3Provider);
 
+      // Listen for events
       App.listenForEvents();
 
+      // Render after contract initialization
       return App.render();
     });
   },
 
-  // Listen for events emitted from the contract
   listenForEvents: function() {
+    // Listen for events emitted from the contract
     App.contracts.Election.deployed().then(function(instance) {
-      // Restart Chrome if you are unable to receive this event
-      // This is a known issue with Metamask
-      // https://github.com/MetaMask/metamask-extension/issues/2393
       instance.votedEvent({}, {
         fromBlock: 0,
         toBlock: 'latest'
       }).watch(function(error, event) {
-        console.log("event triggered", event)
         // Reload when a new vote is recorded
         App.render();
       });
     });
   },
 
-  getAccounts: async function() {
-    const accounts = await web3.eth.getAccounts();
-    App.account = accounts[0];
-    $("#accountAddress").html("Your Account: " + App.account);
-  },
-
-  render: async function() {
+  render: function() {
     var electionInstance;
     var loader = $("#loader");
     var content = $("#content");
@@ -66,20 +63,8 @@ App = {
     loader.hide();
     content.show();
 
-    // Load account data
-    // web3.eth.getCoinbase(function(err, account) {
-    //   if (err === null) {
-    //     console.log(account);
-    //     App.account = account;
-    //     $("#accountAddress").html("Your Account: " + account);
-    //   }
-    // });
-    accounts = await web3.eth.getAccounts(console.log);
-    //App.account = accounts[0];
+    $("#accountAddress").html("Your Account: " + App.account);
 
-    // web3.eth.getAccounts().then(function(accounts) {
-    //   $("#accountAddress").html("Your Account: " + accounts[0]);
-    // })
 
     // Load contract data
     App.contracts.Election.deployed().then(function(instance) {
@@ -118,6 +103,7 @@ App = {
     }).catch(function(error) {
       console.warn(error);
     });
+
   },
 
   castVote: function() {
