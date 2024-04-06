@@ -3,17 +3,19 @@ pragma solidity ^0.8.19;
 
 import "./safemath.sol";
 import "./MVCToken.sol" as MVCTokenContract;
-import "./REPToken.sol" as REPTokenContract;
+//import "./REPToken.sol" as REPTokenContract;
 
 // to interact with a deployed instance of this contract after running command "truffle console":
 // SkolFaithful.deployed().then(function(instance) {app = instance})
+// app.skolNation(0).then(function(c) {candidate=c})
+// web3.eth.getAccounts().then(function(ugh) {accounts=ugh})
+// ugh.skolNation(accounts[0]).then(function(c) {can=c})
 
 // address of contract: '0x55177A98E75ef8bd8A4B0a4dd432C85a4A3659a8'
 
 contract SkolFaithful {
     using SafeMath for uint;
     MVCTokenContract.MVCToken public mvcToken;
-    REPTokenContract.REPToken public repToken;
 
     struct Member {
         address owner;
@@ -22,12 +24,13 @@ contract SkolFaithful {
     }
 
     // Members of the DAO, currently hidden to users
-    mapping(address => Member) private skolNation;
+    mapping(address => Member) public skolNation;
 
     // can reference with: app.clientUser(), app.skolNationCount().toNumber()
     uint public skolNationCount;
 
-    constructor (MVCTokenContract.MVCToken myMvcToken, REPTokenContract.REPToken myRepToken) {
+    constructor (address mvcTokenAddress) {
+        mvcToken = MVCTokenContract.MVCToken(mvcTokenAddress);
 
         // have made head coach proposals
         address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
@@ -55,15 +58,15 @@ contract SkolFaithful {
         address temp1 = 0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84;
         addMember(temp1, 4);
 
-        mvcToken = myMvcToken;
-        repToken = myRepToken;
+        //repToken = myRepToken;
     }
 
     // Adding members to the skolNation map giving them initial values of 4 MVCs and 0 REP tokens
     function addMember(address owner, uint mvcAmount) private {
         skolNationCount = skolNationCount.add(1);
-        skolNation[owner] = Member(owner,0,0);
+        skolNation[owner] = Member(owner,mvcAmount,0);
 
+        // minting mvcAmount of MVCs and assigning it to the account
         mvcToken.mint(owner,mvcAmount);
     }
 

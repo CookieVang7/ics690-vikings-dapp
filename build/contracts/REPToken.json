@@ -11008,19 +11008,19 @@
     "absolutePath": "project:/contracts/REPToken.sol",
     "exportedSymbols": {
       "Context": [
-        2049
+        2040
       ],
       "ERC20": [
-        1945
+        1936
       ],
       "IERC20": [
-        2023
+        2014
       ],
       "REPToken": [
         434
       ],
       "SafeMath": [
-        1442
+        1433
       ]
     },
     "id": 435,
@@ -11045,7 +11045,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 435,
-        "sourceUnit": 1946,
+        "sourceUnit": 1937,
         "src": "61:79:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -11061,7 +11061,7 @@
                 "165:5:4"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1945,
+              "referencedDeclaration": 1936,
               "src": "165:5:4"
             },
             "id": 408,
@@ -11076,9 +11076,9 @@
         "id": 434,
         "linearizedBaseContracts": [
           434,
-          1945,
-          2023,
-          2049
+          1936,
+          2014,
+          2040
         ],
         "name": "REPToken",
         "nameLocation": "153:8:4",
@@ -11131,7 +11131,7 @@
                     "235:5:4"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1945,
+                  "referencedDeclaration": 1936,
                   "src": "235:5:4"
                 },
                 "nodeType": "ModifierInvocation",
@@ -11263,7 +11263,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1821,
+                      "referencedDeclaration": 1812,
                       "src": "344:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -11395,7 +11395,7 @@
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-04-04T06:59:01.288Z",
+  "updatedAt": "2024-04-06T21:10:36.701Z",
   "devdoc": {
     "events": {
       "Approval(address,address,uint256)": {
