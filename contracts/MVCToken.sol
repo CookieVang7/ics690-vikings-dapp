@@ -9,4 +9,12 @@ contract MVCToken is ERC20 {
     function mint(address account, uint256 amount) public {
         _mint(account, amount);
     }
+
+    function transfer(address from,address to,uint256 amount) public {
+        _transfer(from, to, amount);
+    }
+
+    function mvcBalance(address account) public view returns (uint256) {
+        return balanceOf(account);
+    }
 }

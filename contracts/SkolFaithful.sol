@@ -70,17 +70,25 @@ contract SkolFaithful {
         mvcToken.mint(owner,mvcAmount);
     }
 
-    event newDAOMember(address newUser);
+    function mvcTransaction(address owner, uint amount) public {
+        // Ensure that the owner has enough MVC tokens to subtract
+        require(skolNation[owner].mvcs >= amount, "Insufficient MVC tokens balance");
 
-    // function for a new user to join the DAO
-    function joinDAO(address owner) public payable {
-        uint ethAmount = 2; // costing 2 eth to join the dao
-        require(msg.value == ethAmount.toWei(), 'Insufficient funds provided');
-
-        addMember(owner,4);
-
-        emit newDAOMember(owner);
+        // Subtract the specified amount of MVC tokens from the owner's balance
+        skolNation[owner].mvcs = skolNation[owner].mvcs.sub(amount);
     }
+
+    // event newDAOMember(address newUser);
+
+    // // function for a new user to join the DAO
+    // function joinDAO(address owner) public payable {
+    //     uint ethAmount = 2; // costing 2 eth to join the dao
+    //     require(msg.value == ethAmount.toWei(), 'Insufficient funds provided');
+
+    //     addMember(owner,4);
+
+    //     emit newDAOMember(owner);
+    // }
 
     // TODO: condense SkolFaithful and CoachVotingMechanism into a voting contract with the redistribution mechanism
 }

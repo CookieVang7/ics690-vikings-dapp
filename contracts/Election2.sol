@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
+import "./MVCToken.sol" as MVCTokenContract;
+import "./SkolFaithful.sol" as SkolFaithfulContract;
+
 contract Election2 {
     // Model a Candidate
     struct Candidate {
@@ -10,6 +13,9 @@ contract Election2 {
         address ownerAddress;
         address[] votersForCandidate;
     }
+
+    MVCTokenContract.MVCToken public mvcToken;
+    SkolFaithfulContract.SkolFaithful public skolFaithfulInstance;
 
     // Store accounts that have voted
     mapping(address => bool) public voters;
@@ -26,7 +32,10 @@ contract Election2 {
 
     address public contractAddress;
 
-    constructor () {
+    constructor (address mvcTokenAddress, address skolFaithfulAddress) {
+        mvcToken = MVCTokenContract.MVCToken(mvcTokenAddress);
+        skolFaithfulInstance = SkolFaithfulContract.SkolFaithful(skolFaithfulAddress);
+
         address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
         address temp3 = 0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe;
         address temp4 = 0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC;
@@ -53,6 +62,11 @@ contract Election2 {
 
         // require a valid candidate
         require(_candidateId > 0 && _candidateId <= candidatesCount);
+
+        require(mvcToken.mvcBalance(msg.sender) >= 2, "Insufficient MVC tokens to vote");
+
+        mvcToken.transfer(msg.sender,contractAddress,2);
+        skolFaithfulInstance.mvcTransaction(msg.sender,2);
 
         // record that voter has voted
         voters[msg.sender] = true;
