@@ -89,7 +89,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -132,7 +133,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -145,7 +147,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -206,7 +209,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -219,7 +223,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -232,7 +237,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -11008,19 +11014,19 @@
     "absolutePath": "project:/contracts/MVCToken.sol",
     "exportedSymbols": {
       "Context": [
-        2049
+        2040
       ],
       "ERC20": [
-        1945
+        1936
       ],
       "IERC20": [
-        2023
+        2014
       ],
       "MVCToken": [
         370
       ],
       "SafeMath": [
-        1442
+        1433
       ]
     },
     "id": 371,
@@ -11045,7 +11051,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 371,
-        "sourceUnit": 1946,
+        "sourceUnit": 1937,
         "src": "61:79:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -11061,7 +11067,7 @@
                 "165:5:2"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1945,
+              "referencedDeclaration": 1936,
               "src": "165:5:2"
             },
             "id": 344,
@@ -11076,9 +11082,9 @@
         "id": 370,
         "linearizedBaseContracts": [
           370,
-          1945,
-          2023,
-          2049
+          1936,
+          2014,
+          2040
         ],
         "name": "MVCToken",
         "nameLocation": "153:8:2",
@@ -11131,7 +11137,7 @@
                     "235:5:2"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1945,
+                  "referencedDeclaration": 1936,
                   "src": "235:5:2"
                 },
                 "nodeType": "ModifierInvocation",
@@ -11263,7 +11269,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1821,
+                      "referencedDeclaration": 1812,
                       "src": "338:5:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -11390,12 +11396,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x7d265028A98596BEd5Ae1AbF09429259D27DA75A",
-      "transactionHash": "0x6261a7dc1fc3ad59ffec1125d5eae99607a1f39b35710daa5f31b7c63b8be3c2"
+      "address": "0xc619e2d65b4b271de58f3959b688F4002BB7b091",
+      "transactionHash": "0x33d1938fd7aac1b52b2ea0bafcb6ad1c024c11c0972aee44e592028cc3df92d5"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-04-04T06:59:01.274Z",
+  "updatedAt": "2024-04-06T21:10:39.216Z",
+  "networkType": "ethereum",
   "devdoc": {
     "events": {
       "Approval(address,address,uint256)": {

@@ -1,12 +1,14 @@
 // an artifact that we can interact with
 var Election2 = artifacts.require("./Election2.sol");
 // var CoachVotingMechanism = artifacts.require("./CoachVotingMechanism.sol");
-// var MVCToken = artifacts.require("./MVCToken.sol");
+var MVCToken = artifacts.require("./MVCToken.sol");
 // var REPToken = artifacts.require("./REPToken.sol");
+var SkolFaithful = artifacts.require("./SkolFaithful.sol");
 
 // a directive to deploy the contract
 module.exports = function(deployer) {
   deployer.deploy(Election2);
+  // deployer.deploy(SkolFaithful);
   //deployer.deploy(CoachVotingMechanism);
 
   const mvcName = "MVC Token";
@@ -14,6 +16,11 @@ module.exports = function(deployer) {
 
   const repName = "REP Token";
   const repSymbol = "REP";
+
+  deployer.deploy(MVCToken,mvcName,mvcSymbol).then(function() {
+    return deployer.deploy(SkolFaithful,MVCToken.address)
+  });
+  //deployer.deploy(SkolFaithful,mvcName,mvcSymbol);
 
   // deployer.deploy(MVCToken,mvcName,mvcSymbol).then(function() {
   //   return MVCToken.deployed();

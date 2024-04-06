@@ -40,6 +40,34 @@ App = {
       // Render after contract initialization
       return App.render();
     });
+
+    $.getJSON("SkolFaithful.json", function(skolFaithful) {
+      // Instantiate a new truffle contract from the artifact
+      App.contracts.SkolFaithful = TruffleContract(skolFaithful);
+      // Connect provider to interact with contract
+      App.contracts.SkolFaithful.setProvider(App.web3Provider);
+
+      // Listen for events
+      //App.listenForEvents();
+
+      // Render after contract initialization
+      return App.renderMember();
+    });
+  },
+
+  renderMember: function(){
+    var skolFaithfulInstance;
+
+    App.contracts.SkolFaithful.deployed().then(function(instance) {
+      skolFaithfulInstance = instance;
+      return skolFaithfulInstance.skolNation(App.account);
+    }).then(function(candidate) {
+
+      $("#mvcAmount").html("MVCs in your account: " + candidate[1]);
+      return electionInstance.voters(App.account);
+    }).catch(function(error) {
+      console.warn(error);
+    });
   },
 
   listenForEvents: function() {
