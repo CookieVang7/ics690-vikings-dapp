@@ -48,7 +48,7 @@ App = {
       App.contracts.SkolFaithful.setProvider(App.web3Provider);
 
       // Listen for events
-      //App.listenForEvents();
+      //App.listenForTransactionEvents();
 
       // Render after contract initialization
       return App.renderMember();
@@ -79,6 +79,7 @@ App = {
       }).watch(function(error, event) {
         // Reload when a new vote is recorded
         App.render();
+        App.renderMember();
       });
     });
   },

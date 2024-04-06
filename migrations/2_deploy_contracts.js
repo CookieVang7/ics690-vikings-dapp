@@ -7,7 +7,7 @@ var SkolFaithful = artifacts.require("./SkolFaithful.sol");
 
 // a directive to deploy the contract
 module.exports = function(deployer) {
-  deployer.deploy(Election2);
+  //deployer.deploy(Election2);
   // deployer.deploy(SkolFaithful);
   //deployer.deploy(CoachVotingMechanism);
 
@@ -19,6 +19,8 @@ module.exports = function(deployer) {
 
   deployer.deploy(MVCToken,mvcName,mvcSymbol).then(function() {
     return deployer.deploy(SkolFaithful,MVCToken.address)
+  }).then(function() {
+    return deployer.deploy(Election2,MVCToken.address,SkolFaithful.address)
   });
   //deployer.deploy(SkolFaithful,mvcName,mvcSymbol);
 
