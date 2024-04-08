@@ -47,9 +47,6 @@ App = {
       // Connect provider to interact with contract
       App.contracts.SkolFaithful.setProvider(App.web3Provider);
 
-      // Listen for events
-      //App.listenForTransactionEvents();
-
       // Render after contract initialization
       return App.renderMember();
     });
@@ -64,7 +61,8 @@ App = {
     }).then(function(candidate) {
 
       $("#mvcAmount").html("MVCs in your account: " + candidate[1]);
-      return electionInstance.voters(App.account);
+      $("#mvcAmount2").html("MVCs in your account: " + candidate[1]);
+      //return electionInstance.voters(App.account);
     }).catch(function(error) {
       console.warn(error);
     });
@@ -78,7 +76,7 @@ App = {
         toBlock: 'latest'
       }).watch(function(error, event) {
         // Reload when a new vote is recorded
-        App.render();
+        //App.render();
         App.renderMember();
       });
     });
@@ -89,11 +87,7 @@ App = {
     var loader = $("#loader");
     var content = $("#content");
 
-    loader.hide();
-    content.show();
-
     $("#accountAddress").html("Your Account: " + App.account);
-
 
     // Load contract data
     App.contracts.Election2.deployed().then(function(instance) {
@@ -108,6 +102,11 @@ App = {
 
       for (var i = 1; i <= candidatesCount; i++) {
         electionInstance.candidates(i).then(function(candidate) {
+          // console.log('CANDIDATE: ' + i);
+          // console.log(candidate[0]);
+          // console.log(candidate[1]);
+          // console.log(candidate[2]);
+          // console.log(candidate[3]);
           var id = candidate[0];
           var name = candidate[1];
           var voteCount = candidate[2];
@@ -123,7 +122,7 @@ App = {
       }
       return electionInstance.voters(App.account);
     }).then(function(hasVoted) {
-      // Do not allow a user to vote
+      // Do not allow a user to vote more than once
       if(hasVoted) {
         $('form').hide();
       }
@@ -143,7 +142,15 @@ App = {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
-    }).catch(function(err) {
+      return App.contracts.Election2.deployed();
+    }).then(function(instance) {
+      return instance.totalVotes();
+    }).then(function(totalVotes) {
+      if (totalVotes >=10){
+        window.location.href = "results.html";
+      }
+    })
+    .catch(function(err) {
       console.error(err);
     });
   }
