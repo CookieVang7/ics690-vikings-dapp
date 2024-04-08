@@ -60,7 +60,8 @@ App = {
       return skolFaithfulInstance.skolNation(App.account);
     }).then(function(candidate) {
 
-      $("#mvcAmount").html("MVCs in your account: " + candidate[1]);
+      $("#mvcAmount").html("MVC  tokens in your account: " + candidate[1]);
+      $("#repAmount").html("REP tokens in your account: " + candidate[2]);
       $("#mvcAmount2").html("MVCs in your account: " + candidate[1]);
       //return electionInstance.voters(App.account);
     }).catch(function(error) {

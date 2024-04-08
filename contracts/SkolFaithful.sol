@@ -3,7 +3,7 @@ pragma solidity ^0.8.19;
 
 import "./safemath.sol";
 import "./MVCToken.sol" as MVCTokenContract;
-//import "./REPToken.sol" as REPTokenContract;
+import "./REPToken.sol" as REPTokenContract;
 
 // to interact with a deployed instance of this contract after running command "truffle console":
 // SkolFaithful.deployed().then(function(instance) {app = instance})
@@ -16,6 +16,7 @@ import "./MVCToken.sol" as MVCTokenContract;
 contract SkolFaithful {
     using SafeMath for uint;
     MVCTokenContract.MVCToken public mvcToken;
+    REPTokenContract.REPToken public repToken;
 
     struct Member {
         address owner;
@@ -29,8 +30,9 @@ contract SkolFaithful {
     // can reference with: app.clientUser(), app.skolNationCount().toNumber()
     uint public skolNationCount;
 
-    constructor (address mvcTokenAddress) {
+    constructor (address mvcTokenAddress, address repTokenAddress) {
         mvcToken = MVCTokenContract.MVCToken(mvcTokenAddress);
+        repToken = REPTokenContract.REPToken(repTokenAddress);
 
         // have made head coach proposals
         address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
@@ -58,7 +60,6 @@ contract SkolFaithful {
         address temp1 = 0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84;
         addMember(temp1, 4);
 
-        //repToken = myRepToken;
     }
 
     // Adding members to the skolNation map giving them initial values of 4 MVCs and 0 REP tokens
@@ -81,6 +82,13 @@ contract SkolFaithful {
     function mvcReward(address owner, uint amount) public {
         // Add the specified amount of MVC tokens from the owner's balance
         skolNation[owner].mvcs = skolNation[owner].mvcs.add(amount);
+    }
+
+    function repReward(address owner, uint repAmount) public {
+        skolNation[owner].repTokens = skolNation[owner].repTokens.add(repAmount);
+
+        // minting mvcAmount of MVCs and assigning it to the account
+        repToken.mint(owner,repAmount);
     }
 
     // event newDAOMember(address newUser);

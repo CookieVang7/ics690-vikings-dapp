@@ -158,6 +158,16 @@ contract Election2 {
         skolFaithfulInstance.mvcReward(temp9,1);
         skolFaithfulInstance.mvcReward(temp10,1);
 
+        skolFaithfulInstance.repReward(temp1,1);
+        skolFaithfulInstance.repReward(temp2,5);
+        skolFaithfulInstance.repReward(temp3,5);
+        skolFaithfulInstance.repReward(temp4,4);
+        skolFaithfulInstance.repReward(temp5,4);
+        skolFaithfulInstance.repReward(temp6,1);
+        skolFaithfulInstance.repReward(temp7,1);
+        skolFaithfulInstance.repReward(temp8,1);
+        skolFaithfulInstance.repReward(temp9,1);
+
         for (uint i=0;i<21;i++){
             totalVotes--;
         }

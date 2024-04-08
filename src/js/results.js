@@ -51,41 +51,53 @@ App = {
       $("#accountAddress2").html("Your Account: " + App.account);
 
       let amountToShow;
+      let repTokenAmount;
 
       switch(App.account){
         case '0xf220d553fbbc28b6f381cbb2be99d59de42d2f84'.toLowerCase():
             amountToShow = 1;
+            repTokenAmount = 1;
             break;
         case '0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa'.toLowerCase():
             amountToShow = 6;
+            repTokenAmount = 5;
             break;
         case '0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe'.toLowerCase():
             amountToShow = 3;
+            repTokenAmount = 5;
             break;
         case '0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC'.toLowerCase():
             amountToShow = 2;
+            repTokenAmount = 4;
             break;
         case '0x709E646fc789ec4b3D093C8871f66640E9c60616'.toLowerCase():
             amountToShow = 2;
+            repTokenAmount = 4;
             break;
         case '0x0022872cD7Dc3E7eA18242D815B85bF972df29b7'.toLowerCase():
             amountToShow = 1;
+            repTokenAmount = 1;
             break;
         case '0x29903d7E00703607844FCb5D1492B0AFC016E9bf'.toLowerCase():
             amountToShow = 1;
+            repTokenAmount = 1;
             break;
         case '0x8c7Fe6BdEa2e1a76C80dCB75BC0086f96dF550c2'.toLowerCase():
             amountToShow = 1;
+            repTokenAmount = 1;
             break;
         case '0x3f53E1a5c3c56bBd23d97890A28f9ce1c05ee563'.toLowerCase():
             amountToShow = 1;
+            repTokenAmount = 1;
             break;
         case '0x23cCEB31284c9b13361dfE36447Ece97e38Cc887'.toLowerCase():
             amountToShow = 1;
+            repTokenAmount = 0;
             break;
       }
 
       $("#reward").html("As a result of the voting, you were awarded: " + amountToShow + " MVC tokens");
+      $("#rewardRep").html("As a result of the voting, you were awarded: " + repTokenAmount + " REP tokens");
 
       App.contracts.SkolFaithful.deployed().then(function(instance) {
         skolFaithfulInstance = instance;
@@ -93,9 +105,11 @@ App = {
       }).then(function(candidate) {
 
         let newMVCAmount = Number(amountToShow) + Number(candidate[1]);
-        $("#previous").html("Previous MVC in account: " + candidate[1] );
+        $("#previous").html("Previous MVC token amount in account: " + candidate[1] + " MVC tokens");
+        $("#previousRep").html("Previous REP token amount in account: " + candidate[2] + " REP tokens");
   
-        $("#mvcAmount2").html("MVCs in your account: " + newMVCAmount);
+        $("#mvcAmount2").html("MVC tokens in your account: " + newMVCAmount + " MVC tokens");
+        $("#repAmount2").html("REP tokens in your account: " + repTokenAmount + " REP tokens");
       })
   
       var loader = $("#loader");
