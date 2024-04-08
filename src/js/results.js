@@ -49,12 +49,53 @@ App = {
   
     results: function() {
       $("#accountAddress2").html("Your Account: " + App.account);
+
+      let amountToShow;
+
+      switch(App.account){
+        case '0xf220d553fbbc28b6f381cbb2be99d59de42d2f84'.toLowerCase():
+            amountToShow = 1;
+            break;
+        case '0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa'.toLowerCase():
+            amountToShow = 6;
+            break;
+        case '0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe'.toLowerCase():
+            amountToShow = 3;
+            break;
+        case '0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC'.toLowerCase():
+            amountToShow = 2;
+            break;
+        case '0x709E646fc789ec4b3D093C8871f66640E9c60616'.toLowerCase():
+            amountToShow = 2;
+            break;
+        case '0x0022872cD7Dc3E7eA18242D815B85bF972df29b7'.toLowerCase():
+            amountToShow = 1;
+            break;
+        case '0x29903d7E00703607844FCb5D1492B0AFC016E9bf'.toLowerCase():
+            amountToShow = 1;
+            break;
+        case '0x8c7Fe6BdEa2e1a76C80dCB75BC0086f96dF550c2'.toLowerCase():
+            amountToShow = 1;
+            break;
+        case '0x3f53E1a5c3c56bBd23d97890A28f9ce1c05ee563'.toLowerCase():
+            amountToShow = 1;
+            break;
+        case '0x23cCEB31284c9b13361dfE36447Ece97e38Cc887'.toLowerCase():
+            amountToShow = 1;
+            break;
+      }
+
+      $("#reward").html("As a result of the voting, you were awarded: " + amountToShow + " MVC tokens");
+
       App.contracts.SkolFaithful.deployed().then(function(instance) {
         skolFaithfulInstance = instance;
         return skolFaithfulInstance.skolNation(App.account);
       }).then(function(candidate) {
+
+        let newMVCAmount = Number(amountToShow) + Number(candidate[1]);
+        $("#previous").html("Previous MVC in account: " + candidate[1] );
   
-        $("#mvcAmount2").html("MVCs in your account: " + candidate[1]);
+        $("#mvcAmount2").html("MVCs in your account: " + newMVCAmount);
       })
   
       var loader = $("#loader");

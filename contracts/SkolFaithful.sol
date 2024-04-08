@@ -52,7 +52,7 @@ contract SkolFaithful {
         addMember(temp7, 5);
         addMember(temp8, 4);
         addMember(temp9, 3);
-        addMember(temp10, 1);
+        addMember(temp10, 2);
 
         // voting demo
         address temp1 = 0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84;
@@ -76,6 +76,11 @@ contract SkolFaithful {
 
         // Subtract the specified amount of MVC tokens from the owner's balance
         skolNation[owner].mvcs = skolNation[owner].mvcs.sub(amount);
+    }
+
+    function mvcReward(address owner, uint amount) public {
+        // Add the specified amount of MVC tokens from the owner's balance
+        skolNation[owner].mvcs = skolNation[owner].mvcs.add(amount);
     }
 
     // event newDAOMember(address newUser);

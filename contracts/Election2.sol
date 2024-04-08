@@ -26,7 +26,7 @@ contract Election2 {
     // Store Candidates Count
     uint public candidatesCount;
     uint public totalVotes;
-    uint private totalMVCs;
+    uint public totalMVCs;
 
     // voted event
     event votedEvent (
@@ -34,10 +34,14 @@ contract Election2 {
     );
 
     address public contractAddress;
+    function getContractMVCs() public view returns (uint256) {
+        return mvcToken.mvcBalance(contractAddress);
+    }
 
     constructor (address mvcTokenAddress, address skolFaithfulAddress) {
         mvcToken = MVCTokenContract.MVCToken(mvcTokenAddress);
         skolFaithfulInstance = SkolFaithfulContract.SkolFaithful(skolFaithfulAddress);
+        contractAddress = address(this);
 
         address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
         address temp3 = 0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe;
@@ -58,8 +62,6 @@ contract Election2 {
         mockVote(temp8, 2);
         mockVote(temp9, 2);
         mockVote(temp10, 3);
-
-        contractAddress = address(this);
     }
 
     function mockVote(address voterAddress, uint candidateId) private {
@@ -67,6 +69,9 @@ contract Election2 {
         Candidate storage candidate = candidates[candidateId];
         candidate.voteCount++;
         totalVotes++;
+
+        mvcToken.transfer(voterAddress,contractAddress,2);
+        skolFaithfulInstance.mvcTransaction(voterAddress,2);
     }
 
     function addCandidate (string memory _name, address owner) private {
@@ -77,6 +82,9 @@ contract Election2 {
         voters[owner] = true;
         totalMVCs += 4;
         totalVotes++;
+
+        mvcToken.transfer(owner,contractAddress,4);
+        skolFaithfulInstance.mvcTransaction(owner,4);
     }
 
     function vote (uint _candidateId) public {
@@ -103,11 +111,55 @@ contract Election2 {
         emit votedEvent(_candidateId);
     }
 
-    // 26 total MVCs
-    // function finishVoting() public {
-    //     address temp1 = 0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84;
-    //     if (voters[temp1] == true){
+    // 28 total MVCs
+    // Each account gets 1 MVC -> 28-10 = 18
+    // Account 2 gets 30% of 18 -> 18-6 = 12
+    // Account 3 gets 25% of 12 -> 12-3 = 9
+    // Account 4 gets 20% of 9 -> 9-2 = 7
+    // Account 5 gets 15% of 7 -> 7-2 = 5
+    // 5 remaining MVC tokens are burned
 
-    //     }
-    // }
+    // Account 1,6,7,8,9,10 each get 1 MVC
+    // Account 2 gets 6
+    // Account 3 gets 3
+    // Account 4 gets 2
+    // Account 5 gets 2
+    function finishVoting() public {
+        address temp1 = 0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84;
+        address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
+        address temp3 = 0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe;
+        address temp4 = 0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC;
+        address temp5 = 0x709E646fc789ec4b3D093C8871f66640E9c60616;
+        address temp6 = 0x0022872cD7Dc3E7eA18242D815B85bF972df29b7;
+        address temp7 = 0x29903d7E00703607844FCb5D1492B0AFC016E9bf;
+        address temp8 = 0x8c7Fe6BdEa2e1a76C80dCB75BC0086f96dF550c2;
+        address temp9 = 0x3f53E1a5c3c56bBd23d97890A28f9ce1c05ee563;
+        address temp10 = 0x23cCEB31284c9b13361dfE36447Ece97e38Cc887;
+
+        mvcToken.transfer(contractAddress,temp1,1);
+        mvcToken.transfer(contractAddress,temp2,6);
+        mvcToken.transfer(contractAddress,temp3,3);
+        mvcToken.transfer(contractAddress,temp4,2);
+        mvcToken.transfer(contractAddress,temp5,2);
+        mvcToken.transfer(contractAddress,temp6,1);
+        mvcToken.transfer(contractAddress,temp7,1);
+        mvcToken.transfer(contractAddress,temp8,1);
+        mvcToken.transfer(contractAddress,temp9,1);
+        mvcToken.transfer(contractAddress,temp10,1);
+
+        skolFaithfulInstance.mvcReward(temp1,1);
+        skolFaithfulInstance.mvcReward(temp2,6);
+        skolFaithfulInstance.mvcReward(temp3,3);
+        skolFaithfulInstance.mvcReward(temp4,2);
+        skolFaithfulInstance.mvcReward(temp5,2);
+        skolFaithfulInstance.mvcReward(temp6,1);
+        skolFaithfulInstance.mvcReward(temp7,1);
+        skolFaithfulInstance.mvcReward(temp8,1);
+        skolFaithfulInstance.mvcReward(temp9,1);
+        skolFaithfulInstance.mvcReward(temp10,1);
+
+        for (uint i=0;i<21;i++){
+            totalVotes--;
+        }
+    }
 }

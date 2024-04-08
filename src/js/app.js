@@ -154,6 +154,30 @@ App = {
       console.error(err);
     });
   }
+  // castVote: function() {
+  //   var candidateId = $('#candidatesSelect').val();
+  //   App.contracts.Election2.deployed().then(function(instance) {
+  //     return instance.vote(candidateId, { from: App.account });
+  //   }).then(function(result) {
+  //     // Wait for votes to update
+  //     $("#content").hide();
+  //     $("#loader").show();
+  //     return App.contracts.Election2.deployed();
+  //   }).then(function(instance) {
+  //     return instance.finishVoting();
+  //   }).then(function(result) {
+  //     return App.contracts.Election2.deployed();
+  //   }).then(function(instance) {
+  //     return instance.totalVotes();
+  //   }).then(function(totalVotes) {
+  //     if (totalVotes >=10){
+  //       window.location.href = "results.html";
+  //     }
+  //   })
+  //   .catch(function(err) {
+  //     console.error(err);
+  //   });
+  // }
 };
 
 $(function() {
