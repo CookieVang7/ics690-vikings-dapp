@@ -11,8 +11,6 @@ import "./REPToken.sol" as REPTokenContract;
 // web3.eth.getAccounts().then(function(ugh) {accounts=ugh})
 // ugh.skolNation(accounts[0]).then(function(c) {can=c})
 
-// address of contract: '0x55177A98E75ef8bd8A4B0a4dd432C85a4A3659a8'
-
 contract SkolFaithful {
     using SafeMath for uint;
     MVCTokenContract.MVCToken public mvcToken;
@@ -44,7 +42,7 @@ contract SkolFaithful {
         addMember(temp3,9); // Mike Vrabel
         addMember(temp4,8); // Brandon Staley
         addMember(temp5,7); // Frank Reich
-        addMember(temp6,6); // Mike Zimmer
+        addMember(temp6,6);
 
         // voters
         address temp7 = 0x29903d7E00703607844FCb5D1492B0AFC016E9bf;
@@ -90,18 +88,4 @@ contract SkolFaithful {
         // minting mvcAmount of MVCs and assigning it to the account
         repToken.mint(owner,repAmount);
     }
-
-    // event newDAOMember(address newUser);
-
-    // // function for a new user to join the DAO
-    // function joinDAO(address owner) public payable {
-    //     uint ethAmount = 2; // costing 2 eth to join the dao
-    //     require(msg.value == ethAmount.toWei(), 'Insufficient funds provided');
-
-    //     addMember(owner,4);
-
-    //     emit newDAOMember(owner);
-    // }
-
-    // TODO: condense SkolFaithful and CoachVotingMechanism into a voting contract with the redistribution mechanism
 }

@@ -107,6 +107,20 @@ contract Election2 {
         Candidate storage candidate = candidates[_candidateId];
         candidate.voteCount++;
 
+        // 28 total MVCs
+        // Each account gets 1 MVC -> 28-10 = 18
+        // Account 2 gets 30% of 18 -> 18-6 = 12
+        // Account 3 gets 25% of 12 -> 12-3 = 9
+        // Account 4 gets 20% of 9 -> 9-2 = 7
+        // Account 5 gets 15% of 7 -> 7-2 = 5
+        // 5 remaining MVC tokens are burned
+
+        // Account 1,6,7,8,9,10 each get 1 MVC
+        // Account 2 gets 6
+        // Account 3 gets 3
+        // Account 4 gets 2
+        // Account 5 gets 2
+
         mvcToken.transfer(contractAddress,msg.sender,1);
         mvcToken.transfer(contractAddress,temp2,1);
         mvcToken.transfer(contractAddress,temp3,1);
@@ -123,6 +137,11 @@ contract Election2 {
         mvcToken.transfer(contractAddress,temp4,2);
         mvcToken.transfer(contractAddress,temp5,2);
 
+        // REP Token distribution 
+        // Accounts 2 and 3 get 5 newly minted REP tokens for coming 1st and 2nd respectively
+        // Accounts 4 and 5 get 4 newly minted REP tokens for coming in 3rd and 4th respectively
+        // If there was a fifth candidate, the account who proposed it would've gotten 3 newly minted REP tokens
+        // Accounts 6,7,8, and 9 each get 1 newly minted REP token for voting for a top 2 candidate
         skolFaithfulInstance.repReward(msg.sender,1);
         skolFaithfulInstance.repReward(temp2,5);
         skolFaithfulInstance.repReward(temp3,5);
@@ -137,18 +156,6 @@ contract Election2 {
         emit votedEvent(_candidateId);
     }
 
-    // 28 total MVCs
-    // Each account gets 1 MVC -> 28-10 = 18
-    // Account 2 gets 30% of 18 -> 18-6 = 12
-    // Account 3 gets 25% of 12 -> 12-3 = 9
-    // Account 4 gets 20% of 9 -> 9-2 = 7
-    // Account 5 gets 15% of 7 -> 7-2 = 5
-    // 5 remaining MVC tokens are burned
 
-    // Account 1,6,7,8,9,10 each get 1 MVC
-    // Account 2 gets 6
-    // Account 3 gets 3
-    // Account 4 gets 2
-    // Account 5 gets 2
 
 }
