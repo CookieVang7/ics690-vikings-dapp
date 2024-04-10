@@ -85,7 +85,7 @@ contract SkolFaithful {
     }
 
     function repReward(address owner, uint repAmount) public {
-        skolNation[owner].repTokens = skolNation[owner].repTokens.add(repAmount);
+        //skolNation[owner].repTokens = skolNation[owner].repTokens.add(repAmount);
 
         // minting mvcAmount of MVCs and assigning it to the account
         repToken.mint(owner,repAmount);
