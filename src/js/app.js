@@ -63,7 +63,6 @@ App = {
       $("#mvcAmount").html("MVC  tokens in your account: " + candidate[1]);
       $("#repAmount").html("REP tokens in your account: " + candidate[2]);
       $("#mvcAmount2").html("MVCs in your account: " + candidate[1]);
-      //return electionInstance.voters(App.account);
     }).catch(function(error) {
       console.warn(error);
     });
@@ -77,7 +76,6 @@ App = {
         toBlock: 'latest'
       }).watch(function(error, event) {
         // Reload when a new vote is recorded
-        //App.render();
         App.renderMember();
       });
     });
@@ -103,11 +101,6 @@ App = {
 
       for (var i = 1; i <= candidatesCount; i++) {
         electionInstance.candidates(i).then(function(candidate) {
-          // console.log('CANDIDATE: ' + i);
-          // console.log(candidate[0]);
-          // console.log(candidate[1]);
-          // console.log(candidate[2]);
-          // console.log(candidate[3]);
           var id = candidate[0];
           var name = candidate[1];
           var voteCount = candidate[2];
@@ -155,30 +148,6 @@ App = {
       console.error(err);
     });
   }
-  // castVote: function() {
-  //   var candidateId = $('#candidatesSelect').val();
-  //   App.contracts.Election2.deployed().then(function(instance) {
-  //     return instance.vote(candidateId, { from: App.account });
-  //   }).then(function(result) {
-  //     // Wait for votes to update
-  //     $("#content").hide();
-  //     $("#loader").show();
-  //     return App.contracts.Election2.deployed();
-  //   }).then(function(instance) {
-  //     return instance.finishVoting();
-  //   }).then(function(result) {
-  //     return App.contracts.Election2.deployed();
-  //   }).then(function(instance) {
-  //     return instance.totalVotes();
-  //   }).then(function(totalVotes) {
-  //     if (totalVotes >=10){
-  //       window.location.href = "results.html";
-  //     }
-  //   })
-  //   .catch(function(err) {
-  //     console.error(err);
-  //   });
-  // }
 };
 
 $(function() {

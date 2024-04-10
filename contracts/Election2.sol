@@ -11,7 +11,6 @@ contract Election2 {
         string name;
         uint voteCount;
         address ownerAddress;
-        //address[] votersForCandidate;
     }
 
     MVCTokenContract.MVCToken public mvcToken;
@@ -53,20 +52,11 @@ contract Election2 {
         skolFaithfulInstance = SkolFaithfulContract.SkolFaithful(skolFaithfulAddress);
         contractAddress = address(this);
 
-        // address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
-        // address temp3 = 0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe;
-        // address temp4 = 0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC;
-        // address temp5 = 0x709E646fc789ec4b3D093C8871f66640E9c60616;
         addCandidate("Bill Belichick", temp2); // id: 1
         addCandidate("Mike Vrabel", temp3); // id: 2
         addCandidate("Brandon Staley", temp4); // id: 3
         addCandidate("Frank Reich", temp5); // id: 4
 
-        // address temp6 = 0x0022872cD7Dc3E7eA18242D815B85bF972df29b7;
-        // address temp7 = 0x29903d7E00703607844FCb5D1492B0AFC016E9bf;
-        // address temp8 = 0x8c7Fe6BdEa2e1a76C80dCB75BC0086f96dF550c2;
-        // address temp9 = 0x3f53E1a5c3c56bBd23d97890A28f9ce1c05ee563;
-        // address temp10 = 0x23cCEB31284c9b13361dfE36447Ece97e38Cc887;
         mockVote(temp6, 1);
         mockVote(temp7, 1);
         mockVote(temp8, 2);
@@ -118,21 +108,22 @@ contract Election2 {
         candidate.voteCount++;
 
         mvcToken.transfer(contractAddress,msg.sender,1);
-        mvcToken.transfer(contractAddress,temp2,6);
-        mvcToken.transfer(contractAddress,temp3,3);
-        mvcToken.transfer(contractAddress,temp4,2);
-        mvcToken.transfer(contractAddress,temp5,2);
+        mvcToken.transfer(contractAddress,temp2,1);
+        mvcToken.transfer(contractAddress,temp3,1);
+        mvcToken.transfer(contractAddress,temp4,1);
+        mvcToken.transfer(contractAddress,temp5,1);
         mvcToken.transfer(contractAddress,temp6,1);
         mvcToken.transfer(contractAddress,temp7,1);
         mvcToken.transfer(contractAddress,temp8,1);
         mvcToken.transfer(contractAddress,temp9,1);
         mvcToken.transfer(contractAddress,temp10,1);
-                mvcToken.transfer(contractAddress,temp2,1);
-        mvcToken.transfer(contractAddress,temp3,1);
-        mvcToken.transfer(contractAddress,temp4,1);
-        mvcToken.transfer(contractAddress,temp5,1);
 
-                skolFaithfulInstance.repReward(msg.sender,1);
+        mvcToken.transfer(contractAddress,temp2,6);
+        mvcToken.transfer(contractAddress,temp3,3);
+        mvcToken.transfer(contractAddress,temp4,2);
+        mvcToken.transfer(contractAddress,temp5,2);
+
+        skolFaithfulInstance.repReward(msg.sender,1);
         skolFaithfulInstance.repReward(temp2,5);
         skolFaithfulInstance.repReward(temp3,5);
         skolFaithfulInstance.repReward(temp4,4);
@@ -159,52 +150,5 @@ contract Election2 {
     // Account 3 gets 3
     // Account 4 gets 2
     // Account 5 gets 2
-    function finishVoting() public {
-        address temp1 = 0xf220d553fbbC28b6f381CbB2bE99D59De42d2F84;
-        address temp2 = 0xFeb798ed0E1eC865Bf80703cA1E1Bb7a48DdEAfa;
-        address temp3 = 0x48f84a00F895be17BD4Fa9e0731c7b39eAcd6FBe;
-        address temp4 = 0xCF16fe704d4b01ecDD98A41af04B92008D2a32CC;
-        address temp5 = 0x709E646fc789ec4b3D093C8871f66640E9c60616;
-        address temp6 = 0x0022872cD7Dc3E7eA18242D815B85bF972df29b7;
-        address temp7 = 0x29903d7E00703607844FCb5D1492B0AFC016E9bf;
-        address temp8 = 0x8c7Fe6BdEa2e1a76C80dCB75BC0086f96dF550c2;
-        address temp9 = 0x3f53E1a5c3c56bBd23d97890A28f9ce1c05ee563;
-        address temp10 = 0x23cCEB31284c9b13361dfE36447Ece97e38Cc887;
 
-        mvcToken.transfer(contractAddress,temp1,1);
-        mvcToken.transfer(contractAddress,temp2,6);
-        mvcToken.transfer(contractAddress,temp3,3);
-        mvcToken.transfer(contractAddress,temp4,2);
-        mvcToken.transfer(contractAddress,temp5,2);
-        mvcToken.transfer(contractAddress,temp6,1);
-        mvcToken.transfer(contractAddress,temp7,1);
-        mvcToken.transfer(contractAddress,temp8,1);
-        mvcToken.transfer(contractAddress,temp9,1);
-        mvcToken.transfer(contractAddress,temp10,1);
-
-        skolFaithfulInstance.mvcReward(temp1,1);
-        skolFaithfulInstance.mvcReward(temp2,6);
-        skolFaithfulInstance.mvcReward(temp3,3);
-        skolFaithfulInstance.mvcReward(temp4,2);
-        skolFaithfulInstance.mvcReward(temp5,2);
-        skolFaithfulInstance.mvcReward(temp6,1);
-        skolFaithfulInstance.mvcReward(temp7,1);
-        skolFaithfulInstance.mvcReward(temp8,1);
-        skolFaithfulInstance.mvcReward(temp9,1);
-        skolFaithfulInstance.mvcReward(temp10,1);
-
-        skolFaithfulInstance.repReward(temp1,1);
-        skolFaithfulInstance.repReward(temp2,5);
-        skolFaithfulInstance.repReward(temp3,5);
-        skolFaithfulInstance.repReward(temp4,4);
-        skolFaithfulInstance.repReward(temp5,4);
-        skolFaithfulInstance.repReward(temp6,1);
-        skolFaithfulInstance.repReward(temp7,1);
-        skolFaithfulInstance.repReward(temp8,1);
-        skolFaithfulInstance.repReward(temp9,1);
-
-        for (uint i=0;i<21;i++){
-            totalVotes--;
-        }
-    }
 }
