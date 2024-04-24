@@ -27,6 +27,8 @@ ICS690 semester project making a dapp to hypothetically make decisions on behalf
 - Any member of SkolFaithful can buy 1 MVC for $100.
 - Any member of SkolFaithful can trade in 1 REP token for 2 newly minted MVCs.
 
+Image credit to: https://www.usatoday.com/story/sports/nfl/2019/10/24/minnesota-vikings-beat-washington-redskins-behind-kirk-cousins/4092916002/
+
 
 <!-- 150 total MVC, 100 MVC from the top 5 proposals (20 MVC from proposals, 80 from votes, 85 people)
 

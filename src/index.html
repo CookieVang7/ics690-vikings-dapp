@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Minnesota Vikings Dapp</title>
+    <title> Minnesota Vikings Dapp</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,42 +16,53 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      body { 
+        background-image: url('kirko.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh; /* Adjust the height to cover the entire viewport */
+      }
+      .container {
+        width: 650px;
+      }
+    </style>
   </head>
   <body>
     <div class="container" style="width: 650px;">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="text-center">Voting for Head Coach of your Minnesota Vikings</h1>
+          <h1 style="color: white;" class="text-center">Voting for Head Coach of your Minnesota Vikings</h1>
           <hr/>
           <br/>
           <div id="loader">
-            <p class="text-center">Loading...</p>
+            <p style="color: white;" class="text-right">Loading...</p>
           </div>
           <div id="content" style="display: none;">
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Votes</th>
+                  <th style="color: white;" scope="col" class="text-left">#</th>
+                  <th style="color: white;" scope="col" class="text-right">Name</th>
+                  <th style="color: white;" scope="col" class="text-right">Votes</th>
                 </tr>
               </thead>
-              <tbody id="candidatesResults">
+              <tbody style="color: white;" id="candidatesResults" class="text-right">
               </tbody>
             </table>
             <hr/>
             <form onSubmit="App.castVote(); return false;">
               <div class="form-group">
-                <label for="candidatesSelect">Select Candidate</label>
+                <label style="color: white;" for="candidatesSelect">Select Candidate</label>
                 <select class="form-control" id="candidatesSelect">
                 </select>
               </div>
               <button type="submit" class="btn btn-primary">Vote</button>
               <hr />
             </form>
-            <p id="accountAddress" class="text-center"></p>
-            <p id="mvcAmount" class="text-center"></p>
-            <p id="repAmount" class="text-center"></p>
+            <p style="color: white;" id="accountAddress" class="text-right"></p>
+            <p style="color: white;" id="mvcAmount" class="text-right"></p>
+            <p style="color: white;" id="repAmount" class="text-right"></p>
           </div>
         </div>
       </div>
